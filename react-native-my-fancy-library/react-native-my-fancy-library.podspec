@@ -16,7 +16,8 @@ Pod::Spec.new do |s|
   s.platforms    = { :ios => "10.0" }
   s.source       = { :git => "https://github.com/github_account/react-native-my-fancy-library.git", :tag => "#{s.version}" }
 
-  s.source_files = "ios/**/*.{h,m,swift}"
+  s.source_files = "ios/**/*.{h,m,framework,swift}"
+  
   s.requires_arc = true
 
   s.dependency "React"
