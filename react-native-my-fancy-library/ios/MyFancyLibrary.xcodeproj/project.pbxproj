@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		220BBA4166E463DD8D030A5B /* libPods-MyFancyLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 818CDEF685DAB27915DFEB95 /* libPods-MyFancyLibrary.a */; };
+		27965740242DD58F00B9CC80 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2796573F242DD58F00B9CC80 /* Alamofire.framework */; };
+		27965746242DD5A500B9CC80 /* SocketIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27965741242DD5A400B9CC80 /* SocketIO.framework */; };
+		27965747242DD5A500B9CC80 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27965742242DD5A400B9CC80 /* CryptoSwift.framework */; };
+		27965748242DD5A500B9CC80 /* IDZSwiftCommonCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27965743242DD5A400B9CC80 /* IDZSwiftCommonCrypto.framework */; };
+		27965749242DD5A500B9CC80 /* REIOSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27965744242DD5A400B9CC80 /* REIOSSDK.framework */; };
+		2796574A242DD5A500B9CC80 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27965745242DD5A500B9CC80 /* Starscream.framework */; };
 		B3E7B58A1CC2AC0600A0062D /* MyFancyLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* MyFancyLibrary.m */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +31,12 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libMyFancyLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMyFancyLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2796573F242DD58F00B9CC80 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
+		27965741242DD5A400B9CC80 /* SocketIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SocketIO.framework; sourceTree = "<group>"; };
+		27965742242DD5A400B9CC80 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
+		27965743242DD5A400B9CC80 /* IDZSwiftCommonCrypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IDZSwiftCommonCrypto.framework; sourceTree = "<group>"; };
+		27965744242DD5A400B9CC80 /* REIOSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = REIOSSDK.framework; sourceTree = "<group>"; };
+		27965745242DD5A500B9CC80 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Starscream.framework; sourceTree = "<group>"; };
 		818CDEF685DAB27915DFEB95 /* libPods-MyFancyLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyFancyLibrary.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BFAD342F9AA51F9491E3C2 /* Pods-MyFancyLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFancyLibrary.debug.xcconfig"; path = "Target Support Files/Pods-MyFancyLibrary/Pods-MyFancyLibrary.debug.xcconfig"; sourceTree = "<group>"; };
 		A927BA3900EDD523671E20FF /* Pods-MyFancyLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFancyLibrary.release.xcconfig"; path = "Target Support Files/Pods-MyFancyLibrary/Pods-MyFancyLibrary.release.xcconfig"; sourceTree = "<group>"; };
@@ -37,7 +49,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27965746242DD5A500B9CC80 /* SocketIO.framework in Frameworks */,
+				2796574A242DD5A500B9CC80 /* Starscream.framework in Frameworks */,
+				27965748242DD5A500B9CC80 /* IDZSwiftCommonCrypto.framework in Frameworks */,
+				27965749242DD5A500B9CC80 /* REIOSSDK.framework in Frameworks */,
 				220BBA4166E463DD8D030A5B /* libPods-MyFancyLibrary.a in Frameworks */,
+				27965740242DD58F00B9CC80 /* Alamofire.framework in Frameworks */,
+				27965747242DD5A500B9CC80 /* CryptoSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,7 +76,6 @@
 				94BFAD342F9AA51F9491E3C2 /* Pods-MyFancyLibrary.debug.xcconfig */,
 				A927BA3900EDD523671E20FF /* Pods-MyFancyLibrary.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -75,6 +92,12 @@
 			children = (
 				B3E7B5881CC2AC0600A0062D /* MyFancyLibrary.h */,
 				B3E7B5891CC2AC0600A0062D /* MyFancyLibrary.m */,
+				2796573F242DD58F00B9CC80 /* Alamofire.framework */,
+				27965742242DD5A400B9CC80 /* CryptoSwift.framework */,
+				27965743242DD5A400B9CC80 /* IDZSwiftCommonCrypto.framework */,
+				27965744242DD5A400B9CC80 /* REIOSSDK.framework */,
+				27965741242DD5A400B9CC80 /* SocketIO.framework */,
+				27965745242DD5A500B9CC80 /* Starscream.framework */,
 				134814211AA4EA7D00B7C361 /* Products */,
 				1CFDCE57A9932C75D4D41CBD /* Pods */,
 				2AB6A6924B7103748C6E698B /* Frameworks */,
@@ -121,6 +144,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 58B511D21A9E6C8500147676;
@@ -267,6 +291,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 94BFAD342F9AA51F9491E3C2 /* Pods-MyFancyLibrary.debug.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -284,6 +312,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A927BA3900EDD523671E20FF /* Pods-MyFancyLibrary.release.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,

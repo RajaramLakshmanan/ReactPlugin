@@ -1,9 +1,10 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '10.0'
+platform :ios, '10.0'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
 target 'MyFancyLibrary' do
  
-  pod 'React', :path => '../node_modules/react-native/React.podspec'
+ # pod 'React', :path => '../node_modules/react-native/React.podspec'
+  #pod 'REIOSSDK_79f647df_f43f_44b2_8cf3_e6a2a975f9ee'
 
 end

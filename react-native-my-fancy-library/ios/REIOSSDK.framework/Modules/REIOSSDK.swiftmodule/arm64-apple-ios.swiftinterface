@@ -1,0 +1,333 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.1.3 effective-4.1.50 (swiftlang-1100.0.282.1 clang-1100.0.33.15)
+// swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 4 -enforce-exclusivity=checked -Onone -module-name REIOSSDK
+import AdSupport
+import AudioToolbox
+import CoreBluetooth
+import CoreData
+import CoreLocation
+import CoreTelephony
+import CryptoSwift
+import Foundation
+@_exported import REIOSSDK
+import SocketIO
+import Swift
+import SystemConfiguration
+import UIKit
+import UserNotifications
+import WebKit
+@objc public class NotificationHandler : ObjectiveC.NSObject {
+  public func registerCategory(category: Swift.Set<UserNotifications.UNNotificationCategory>?)
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension NotificationHandler {
+  @objc dynamic public func setForegroundNotification(notification: UserNotifications.UNNotification, completionHandler: @escaping (UserNotifications.UNNotificationPresentationOptions) -> Swift.Void)
+  @objc dynamic public func setForegroundNotification(data: [Swift.String : Any], completionHandler: @escaping (UserNotifications.UNNotificationPresentationOptions) -> Swift.Void)
+  @objc dynamic public func setNotificationAction(response: Any)
+  @objc dynamic public func setNotificationAction1(response: UserNotifications.UNNotificationResponse)
+  public func sendCampaignData(status: Swift.Int, campaignId: Swift.String)
+}
+extension NotificationHandler {
+  public class func deleteNotificationListWith(dict: [Swift.String : Any])
+  public class func deleteNotificationByCampaignId(campaignId: Swift.String)
+  public class func deleteNotificationByNotificationId(notificationId: Swift.String)
+}
+extension NotificationHandler {
+  public class func checkCampaginisExistorNot(campaginId: Swift.String) -> CoreData.NSManagedObject?
+  public class func checkNotificationIdExistorNot(notificationId: Swift.String) -> CoreData.NSManagedObject?
+}
+public struct PushNotificationModel {
+}
+@objc public class REiosHandler : ObjectiveC.NSObject {
+  @objc public static var isBaseUrl: Swift.Int
+  @objc public static var printAny: Swift.Bool
+  @objc public static var debug: Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension REiosHandler {
+  @objc dynamic public class func initWithApi(apiKey: Swift.String, registerNotificationCategory category: Swift.Set<UserNotifications.UNNotificationCategory>?)
+}
+extension REiosHandler {
+  @objc dynamic public class func sdkRegistrationWith(name: Swift.String?, phone: Swift.String?, email: Swift.String?, deviceToken: Swift.String?)
+  @objc dynamic public class func sdkRegistrationWith(name: Swift.String?, phone: Swift.String?, email: Swift.String?, deviceToken: Swift.String?, age: Swift.String?, gender: Swift.String?)
+  @objc dynamic public class func sdkRegistrationWithDict(params: [Swift.String : Any])
+}
+extension REiosHandler {
+  @objc dynamic public class func addEvent(eventName: Swift.String, data: Swift.String?)
+  @objc dynamic public class func addEvent(eventName: Swift.String, data1: [Swift.String : Any]?)
+  @objc dynamic public class func updateLocation(lat: Swift.String, long: Swift.String)
+}
+extension REiosHandler {
+  @objc dynamic public class func getNotificationList() -> [Any]
+  @objc dynamic public class func unreadNotificationCount(onSuccess success: @escaping (Swift.Int) -> (), onFailure failure: @escaping (Swift.Int) -> ())
+  @objc dynamic public class func totalNotificationCount() -> Swift.Int
+  @objc dynamic public class func sdkversion() -> Swift.String
+  @objc dynamic public class func deleteNotificationListWith(dict: [Swift.String : Any])
+  @objc dynamic public class func deleteNotificationByCampaignId(campaignId: Swift.String)
+  @objc dynamic public class func deleteNotificationByNotificationId(notificationId: Swift.String)
+  @objc dynamic public class func getDeeplinkData() -> [Swift.String : Any]?
+  @objc dynamic public class func fetchNotificationListData()
+}
+extension REiosHandler {
+  @objc dynamic public class func setScreenName(screenName: Swift.String)
+}
+extension REiosHandler {
+  @objc dynamic public class func getNotification() -> REIOSSDK.NotificationHandler?
+  @objc dynamic public class func getDeeplink() -> REIOSSDK.Deeplinking?
+}
+extension REiosHandler {
+  @objc dynamic public class func getApplication(application: UIKit.UIApplication)
+  @objc dynamic public class func resulticksAPNSLocalNotification(title: Swift.String, body: Swift.String)
+}
+open class NetworkReachabilityManager {
+  public enum NetworkReachabilityStatus {
+    case unknown
+    case notReachable
+    case reachable(REIOSSDK.NetworkReachabilityManager.ConnectionType)
+  }
+  public enum ConnectionType {
+    case ethernetOrWiFi
+    case wwan
+    public static func == (a: REIOSSDK.NetworkReachabilityManager.ConnectionType, b: REIOSSDK.NetworkReachabilityManager.ConnectionType) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public typealias Listener = (REIOSSDK.NetworkReachabilityManager.NetworkReachabilityStatus) -> Swift.Void
+  open var isReachable: Swift.Bool {
+    get
+  }
+  open var isReachableOnWWAN: Swift.Bool {
+    get
+  }
+  open var isReachableOnEthernetOrWiFi: Swift.Bool {
+    get
+  }
+  open var networkReachabilityStatus: REIOSSDK.NetworkReachabilityManager.NetworkReachabilityStatus {
+    get
+  }
+  open var listenerQueue: Dispatch.DispatchQueue
+  open var listener: REIOSSDK.NetworkReachabilityManager.Listener?
+  open var flags: SystemConfiguration.SCNetworkReachabilityFlags? {
+    get
+  }
+  open var previousFlags: SystemConfiguration.SCNetworkReachabilityFlags
+  public convenience init?(host: Swift.String)
+  public convenience init?()
+  @objc deinit
+  @discardableResult
+  open func startListening() -> Swift.Bool
+  open func stopListening()
+}
+extension NetworkReachabilityManager.NetworkReachabilityStatus : Swift.Equatable {
+}
+public func == (lhs: REIOSSDK.NetworkReachabilityManager.NetworkReachabilityStatus, rhs: REIOSSDK.NetworkReachabilityManager.NetworkReachabilityStatus) -> Swift.Bool
+@objc(ScreenTracking) public class ScreenTracking : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+extension ScreenTracking {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<REIOSSDK.ScreenTracking>
+  @objc @NSManaged dynamic public var dict: ObjectiveC.NSObject? {
+    @objc get
+    @objc set(value)
+  }
+}
+@objc(NotificationList) public class NotificationList : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+extension NotificationList {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<REIOSSDK.NotificationList>
+  @objc @NSManaged dynamic public var dict: ObjectiveC.NSObject? {
+    @objc get
+    @objc set(value)
+  }
+}
+@objc(EventTracking) public class EventTracking : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+extension EventTracking {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<REIOSSDK.EventTracking>
+  @objc @NSManaged dynamic public var dict: ObjectiveC.NSObject? {
+    @objc get
+    @objc set(value)
+  }
+}
+@objc(CampaignTracking) public class CampaignTracking : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+extension CampaignTracking {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<REIOSSDK.CampaignTracking>
+  @objc @NSManaged dynamic public var dict: ObjectiveC.NSObject? {
+    @objc get
+    @objc set(value)
+  }
+}
+@objc(FieldTracking) public class FieldTracking : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+extension FieldTracking {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<REIOSSDK.FieldTracking>
+  @objc @NSManaged dynamic public var captureType: Swift.String? {
+    @objc get
+    @objc set(value)
+  }
+  @objc @NSManaged dynamic public var identifier: Swift.String? {
+    @objc get
+    @objc set(value)
+  }
+  @objc @NSManaged dynamic public var screenName: Swift.String? {
+    @objc get
+    @objc set(value)
+  }
+  @objc @NSManaged dynamic public var descriptionn: Swift.String? {
+    @objc get
+    @objc set(value)
+  }
+  @objc @NSManaged dynamic public var campaignId: Swift.String? {
+    @objc get
+    @objc set(value)
+  }
+  @objc @NSManaged dynamic public var markAsGoal: Swift.String? {
+    @objc get
+    @objc set(value)
+  }
+  @objc @NSManaged dynamic public var minDuration: Swift.String? {
+    @objc get
+    @objc set(value)
+  }
+  @objc @NSManaged dynamic public var minLength: Swift.String? {
+    @objc get
+    @objc set(value)
+  }
+  @objc @NSManaged dynamic public var dict: ObjectiveC.NSObject? {
+    @objc get
+    @objc set(value)
+  }
+}
+extension UIViewController {
+  public func toShowNavigationBar()
+  public func toHideNavigationBar()
+}
+extension UIViewController {
+  @objc override dynamic open func motionEnded(_ motion: UIKit.UIEventSubtype, with event: UIKit.UIEvent?)
+}
+public enum Model1 : Swift.String {
+  case simulator
+  case iPod1
+  case iPod2
+  case iPod3
+  case iPod4
+  case iPod5
+  case iPad2
+  case iPad3
+  case iPad4
+  case iPhone4
+  case iPhone4S
+  case iPhone5
+  case iPhone5S
+  case iPhone5C
+  case iPadMini1
+  case iPadMini2
+  case iPadMini3
+  case iPadAir1
+  case iPadAir2
+  case iPadPro9_7
+  case iPadPro9_7_cell
+  case iPadPro10_5
+  case iPadPro10_5_cell
+  case iPadPro12_9
+  case iPadPro12_9_cell
+  case iPhone6
+  case iPhone6plus
+  case iPhone6S
+  case iPhone6Splus
+  case iPhoneSE
+  case iPhone7
+  case iPhone7plus
+  case iPhone8
+  case iPhone8plus
+  case iPhoneX
+  case iPhoneXS
+  case iPhoneXSmax
+  case iPhoneXR
+  case iPhone11
+  case iPhone11Pro
+  case iPhone11ProMax
+  case unrecognized
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum BluetoothModel : Swift.String {
+  case simulator
+  case unrecognized
+  case iPod1
+  case iPod2
+  case iPod3
+  case iPod4
+  case iPad2
+  case iPhone5
+  case iPhone5C
+  case iPhone4S
+  case iPod5
+  case iPad3
+  case iPad4
+  case iPhone4
+  case iPhone5S
+  case iPadMini1
+  case iPadMini2
+  case iPadMini3
+  case iPadAir1
+  case iPhone6
+  case iPhone6plus
+  case iPhone6S
+  case iPhone7
+  case iPhone6Splus
+  case iPhoneSE
+  case iPhone7plus
+  case iPadAir2
+  case iPadPro9_7_cell
+  case iPadPro10_5
+  case iPadPro10_5_cell
+  case iPadPro12_9_cell
+  case iPhone8
+  case iPhone8plus
+  case iPhoneX
+  case iPhoneXS
+  case iPhoneXSmax
+  case iPhoneXR
+  case iPhone11
+  case iPhone11Pro
+  case iPhone11ProMax
+  case iPadPro9_7
+  case iPadPro12_9
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension UIDevice {
+  public static var modelname: REIOSSDK.Model1 {
+    get
+  }
+  public static var bluetoothversion: REIOSSDK.BluetoothModel {
+    get
+  }
+}
+@objc public class Deeplinking : ObjectiveC.NSObject {
+  @objc public func handleDeeplink(application: UIKit.UIApplication, userActivity: Foundation.NSUserActivity)
+  @objc public func handleOpenlink(url: Foundation.URL)
+  @objc override dynamic public init()
+  @objc deinit
+}
