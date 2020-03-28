@@ -14,6 +14,7 @@
 		27965748242DD5A500B9CC80 /* IDZSwiftCommonCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27965743242DD5A400B9CC80 /* IDZSwiftCommonCrypto.framework */; };
 		27965749242DD5A500B9CC80 /* REIOSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27965744242DD5A400B9CC80 /* REIOSSDK.framework */; };
 		2796574A242DD5A500B9CC80 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27965745242DD5A500B9CC80 /* Starscream.framework */; };
+		27965754242F2DA400B9CC80 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27965753242F2DA400B9CC80 /* Test.swift */; };
 		B3E7B58A1CC2AC0600A0062D /* MyFancyLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* MyFancyLibrary.m */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,8 @@
 		27965743242DD5A400B9CC80 /* IDZSwiftCommonCrypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IDZSwiftCommonCrypto.framework; sourceTree = "<group>"; };
 		27965744242DD5A400B9CC80 /* REIOSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = REIOSSDK.framework; sourceTree = "<group>"; };
 		27965745242DD5A500B9CC80 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Starscream.framework; sourceTree = "<group>"; };
+		27965752242F2DA300B9CC80 /* MyFancyLibrary-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyFancyLibrary-Bridging-Header.h"; sourceTree = "<group>"; };
+		27965753242F2DA400B9CC80 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		818CDEF685DAB27915DFEB95 /* libPods-MyFancyLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyFancyLibrary.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BFAD342F9AA51F9491E3C2 /* Pods-MyFancyLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFancyLibrary.debug.xcconfig"; path = "Target Support Files/Pods-MyFancyLibrary/Pods-MyFancyLibrary.debug.xcconfig"; sourceTree = "<group>"; };
 		A927BA3900EDD523671E20FF /* Pods-MyFancyLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFancyLibrary.release.xcconfig"; path = "Target Support Files/Pods-MyFancyLibrary/Pods-MyFancyLibrary.release.xcconfig"; sourceTree = "<group>"; };
@@ -79,6 +82,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		27965751242F2D7E00B9CC80 /* File */ = {
+			isa = PBXGroup;
+			children = (
+				27965753242F2DA400B9CC80 /* Test.swift */,
+				27965752242F2DA300B9CC80 /* MyFancyLibrary-Bridging-Header.h */,
+			);
+			path = File;
+			sourceTree = "<group>";
+		};
 		2AB6A6924B7103748C6E698B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +102,7 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				27965751242F2D7E00B9CC80 /* File */,
 				B3E7B5881CC2AC0600A0062D /* MyFancyLibrary.h */,
 				B3E7B5891CC2AC0600A0062D /* MyFancyLibrary.m */,
 				2796573F242DD58F00B9CC80 /* Alamofire.framework */,
@@ -136,6 +149,7 @@
 				TargetAttributes = {
 					58B511DA1A9E6C8500147676 = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -188,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3E7B58A1CC2AC0600A0062D /* MyFancyLibrary.m in Sources */,
+				27965754242F2DA400B9CC80 /* Test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +306,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 94BFAD342F9AA51F9491E3C2 /* Pods-MyFancyLibrary.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -301,10 +317,14 @@
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = MyFancyLibrary;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "File/MyFancyLibrary-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -312,6 +332,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A927BA3900EDD523671E20FF /* Pods-MyFancyLibrary.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -322,10 +343,13 @@
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = MyFancyLibrary;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "File/MyFancyLibrary-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
